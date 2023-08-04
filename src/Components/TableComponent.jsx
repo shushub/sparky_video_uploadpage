@@ -42,12 +42,13 @@ const TableComponent = () => {
 const getVisibilityIcon = (id) => {
       return visibility[id] ? 'visibility_off.svg' : 'visibility.svg';
   };
+
   return (
     <div>
       <table className='videoframe'>
-        <thread  className= "custom-line">
+        <thread className= "custom-line">
           <tr>
-            <th >
+            <th>
               <input
                 type="checkbox"
                 checked={selectedRows.length === data.length}
@@ -64,14 +65,14 @@ const getVisibilityIcon = (id) => {
         </thread>
         <tbody>
           {data.map((item) => (
-            <tr key={item.id} style={{ marginBottom: '26px' }}>
-      <td>
-        <input
-          type="checkbox"
-          checked={selectedRows.includes(item.id)}
-          onChange={() => toggleRowSelection(item.id)}
-        />
-      </td>
+            <tr key={item.id}  className="custom-line">
+              <td>
+                <input
+                  type="checkbox"
+                  checked={selectedRows.includes(item.id)}
+                  onChange={() => toggleRowSelection(item.id)}
+                />
+              </td>
               <td>
                 <input
                   type="file"
@@ -137,3 +138,4 @@ const getVisibilityIcon = (id) => {
   );
 };
 export default TableComponent;
+	

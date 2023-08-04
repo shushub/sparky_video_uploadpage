@@ -27,7 +27,6 @@ input[type='checkbox'] {
     border-radius: 2px;
     outline: none;
     position: relative;
-    margin-right: 90px;
 }
 input[type='checkbox']:checked {
     background-color: #334D6E;
@@ -160,13 +159,3 @@ table {
     text-align: center;
     border-bottom: 1px solid #C2CFE0 !important;
 }
-  
-  
-
- 
-  
-  
-  
-  
-  
-  
