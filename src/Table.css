@@ -83,6 +83,7 @@ table {
     height: 531px;
     flex-shrink: 0;
     fill:#FFF;
+    margin-left: 35px;
 }
 .profile-image {
     width: 137px;
@@ -155,7 +156,7 @@ table {
     text-align: center; 
 }
 .custom-line {
-    padding: 10px 10px;
+    padding: 3px 1px;
     text-align: center;
-    border-bottom: 1px solid #C2CFE0 !important;
+    border-bottom: 1px solid #C2CFE0;
 }
