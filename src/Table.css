@@ -160,3 +160,114 @@ table {
     text-align: center;
     border-bottom: 1px solid #C2CFE0;
 }
+.edit-dropdown{
+    width: 173px;
+    height: 100px;
+    flex-shrink: 0;
+    background: var(--bg-2, #FCFCFC);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+}
+.edit-direct{
+    width: 173px;
+    height: 45px;
+    flex-shrink: 0;
+    background:#FFF;
+    border: none;
+}
+.edit-direct:hover{
+    background: #F5F6F8;
+}
+.check-detail{
+    width: 173px;
+    height: 45px;
+    flex-shrink: 0;
+    background: #FFF;
+    border: none;
+}
+.check-detail:hover{
+    background: #F5F6F8;
+}
+.edit-text{
+    color: var(--090909, #090909);
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15px;
+}
+.bottom-box{
+    margin-top: 14px;
+    margin-left: 1046px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.left-button{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid var(--neutral-5, #D9D9D9);
+    background: var(--neutral-1, #FFF);
+    margin-right: 8px;
+    color: #D9D9D9;
+}
+.current-page{
+    display: inline-flex;
+    padding: 1px 7px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 2px;
+    background: var(--light-point, #5100CE);
+    margin-right: 8px;
+    width: 32px;
+    height: 30px;
+    color: var(--dark-main-text, #F5F6F8);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    border: none;
+}
+.right-button{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid var(--neutral-5, #D9D9D9);
+    background: var(--neutral-1, #FFF);
+    color: #D9D9D9;
+}
+.all-option{
+    width: 310px;
+    height: 256px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+}
+.option-edit,
+.option-game,
+.option-fix,
+.option-sparky,
+.option-link{
+    color: var(--334-d-6-e, #334D6E);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.12px;
+    margin-left: 30px;
+}

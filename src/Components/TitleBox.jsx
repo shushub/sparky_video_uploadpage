@@ -2,10 +2,10 @@ import DropDown from './DropDown';
 import Category from './Category';
 import Search from './Search';
 import TableComponent from './TableComponent';
+import PageMove from './PageMove';
+
 
 const TitleBox = () => {
-  
-
     return (
         <div className='frame'>
             <div className='firstbox'>
@@ -21,6 +21,7 @@ const TitleBox = () => {
                         <Search />
                     </div>
                     <TableComponent/>
+                    <PageMove />
             </div>
         </div>
 
