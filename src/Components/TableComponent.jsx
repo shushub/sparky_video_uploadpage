@@ -9,12 +9,18 @@ const TableComponent = () => {
   ];
   const [selectedRows, setSelectedRows] = useState([]);
   const [visibility, setVisibility] = useState({});
-  const [showEditDropdown, setShowEditDropdown] = useState(false);
-  const [selectedEditRow, setSelectedEditRow] = useState(null);
+  const [showEditDropdown, setShowEditDropdown] = useState(false); 
+  const [selectedEditRow, setSelectedEditRow] = useState(null); 
   const [editedText, setEditedText] = useState('');
   const [editInputVisible, setEditInputVisible] = useState(false); 
-  const [showButton, setShowButton] = useState(false); 
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedDropdownRow, setSelectedDropdownRow] = useState(null);
 
+  const handleGroupOptionsClick = (id) => {
+    setSelectedDropdownRow(id);
+    setShowDropdown(!showDropdown);
+  };
+  
   const toggleRowSelection = (id) => {
     if (selectedRows.includes(id)) {
       setSelectedRows(selectedRows.filter((rowId) => rowId !== id));
@@ -23,10 +29,6 @@ const TableComponent = () => {
     }
   };
 
-  const handleButtonClick = () => {
-    setShowButton(false); // Hide the button when it is clicked
-  };
-  
   const toggleAllRowSelection = () => {
     if (selectedRows.length === data.length) {
       setSelectedRows([]);
@@ -53,20 +55,12 @@ const TableComponent = () => {
     setEditInputVisible(true);
   };
 
-  const handleSaveClick = () => {
-    setShowEditDropdown(false);
-    setSelectedEditRow(null);
-    setEditInputVisible(false); 
-  };
-  const handleGroupImageClick = () => {
-    setShowButton(!showButton);
-  };
   return (
     <div>
       <table className="videoframe">
-        <thead className="custom-line">
+        <thead>
           <tr>
-            <th>
+            <th >
               <input
                 type="checkbox"
                 checked={selectedRows.length === data.length}
@@ -81,9 +75,10 @@ const TableComponent = () => {
             <th>날짜 ↓</th>
           </tr>
         </thead>
+          <div  className="custom-line"></div>
         <tbody>
           {data.map((item) => (
-            <tr key={item.id}>
+            <tr key={item.id} className="styled-row">
               <td>
                 <input
                   type="checkbox"
@@ -132,42 +127,50 @@ const TableComponent = () => {
                   <div style={{ marginTop: '25px', marginLeft:'14px'}}>
                     <img src="library_add_24px.svg" alt=" " style={{ width: '24px', height: '24px' }} />
                   </div>
-                  <div style={{ marginTop: '25px', marginLeft: '14px' }}>
-                    <img
-                      src="Group 1411.svg"
-                      alt=" "
-                      style={{ width: '24px', height: '24px'}}
-                      onClick={handleGroupImageClick} 
-                    />
-                  </div>
-                  {showButton && (
-                    <div style={{ marginTop: '25px', marginLeft: '14px' }}>
-                      <div>
-                        <button className='all-option' onClick={handleButtonClick}>
-                          <div>
-                            <img src="edit_24px.svg" alt=" " style={{ width: '24px', height: '24px' }}/>
-                              <span className='option-edit'>제목 및 설명 수정</span>
-                          </div>
-                          <div>
-                            <img src="library_add_24px.svg" alt=" " style={{ width: '24px', height: '24px' }} />
-                            <span className='option-game'>게임 구간 설정</span>
-                          </div>
-                          <div>
-                            <img src="Group 1411.svg" alt=" " style={{ width: '24px', height: '24px'}} />
-                            <span className='option-fix'>관절 위치 수정</span>
-                          </div>
-                          <div>
-                            <img src="offline_bolt_24px.svg" alt=" " style={{ width: '24px', height: '24px' }} />
-                            <span className='option-sparky'>스파키에서 보기</span>
-                          </div>
-                          <div>
-                            <img src="Group.svg" alt=" " style={{ width: '24px', height: '24px' }} />
-                            <span className='option-link'>링크 복사</span>
-                          </div>
-                        </button>
+                    <div style={{ marginTop: '25px', marginLeft: '14px'}}>
+                      <div style={{ position: 'relative' }}>
+                        <img
+                          src="Group 1411.svg"
+                          alt=" "
+                          style={{ width: '24px', height: '24px'}}
+                          onClick={() => handleGroupOptionsClick(item.id)}
+                        />
+                      {showDropdown && selectedDropdownRow === item.id && (
+                      <div
+                        className="group-dropdown"
+                        style={{
+                        position: 'absolute',
+                        top: '100%',
+                        left: '0',
+                        zIndex: 1,
+                      }}
+                      > 
+                      <button className="all-option" onClick={() => handleGroupOptionsClick(item.id)}>
+                        <div className="dropdown-item">
+                          <img src="edit_24px.svg" alt=" " style={{ width: '24px', height: '24px' }} className="option-icon"/>
+                          <span className="option-edit">제목 및 설명 수정</span>
+                        </div>
+                        <div className="dropdown-item">
+                          <img src="library_add_24px.svg" alt=" " style={{ width: '24px', height: '24px' }} />
+                          <span className="option-game">게임 구간 설정</span>
+                        </div>
+                        <div className="dropdown-item">
+                          <img src="Group 1411.svg" alt=" " style={{ width: '24px', height: '24px' }} />
+                          <span className="option-fix">관절 위치 수정</span>
+                        </div>
+                        <div className="dropdown-item">
+                          <img src="offline_bolt_24px.svg" alt=" " style={{ width: '24px', height: '24px' }} />
+                          <span className="option-sparky">스파키에서 보기</span>
+                        </div>
+                        <div className="dropdown-item">
+                          <img src="Group.svg" alt=" " style={{ width: '24px', height: '24px' }} />
+                          <span className="option-link">링크 복사</span>
+                        </div>
+                      </button>
+                     </div>
+                        )}
                       </div>
                     </div>
-                  )}
                   <div style={{ marginTop: '25px', marginLeft:'14px'}}>
                   <img src="offline_bolt_24px.svg" alt=" " style={{ width: '24px', height: '24px' }} />
                   </div>

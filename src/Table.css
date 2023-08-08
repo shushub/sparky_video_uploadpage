@@ -56,10 +56,6 @@ svg{
     height: 182px;
     flex-shrink: 0;     
 }
-.dropzone {
-    cursor: pointer;
-    margin-top: 30px;
-}
 table tr{
     display: grid;
     grid-template-columns: 0.1fr 0.3fr 0.15fr 0.1fr 0.1fr 0.1fr 0.1fr;
@@ -154,11 +150,6 @@ table {
 .table-data-cell {
     padding: 10px 15px; 
     text-align: center; 
-}
-.custom-line {
-    padding: 3px 1px;
-    text-align: center;
-    border-bottom: 1px solid #C2CFE0;
 }
 .edit-dropdown{
     width: 173px;
@@ -271,3 +262,27 @@ table {
     letter-spacing: 0.12px;
     margin-left: 30px;
 }
+.group-dropdown{
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+.styled-row {
+    margin-top: 20px;
+}
+.custom-line{
+    width: 1122px;
+    height: 0.5px;
+    background: #C2CFE0;
+}
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    margin-top: 5px;
+  }
+  .option-icon {
+    width: 24px;
+    height: 24px;
+    
+  }
