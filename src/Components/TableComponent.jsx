@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const TableComponent = () => {
+const TableComponent = ({ onSelectRows }) => {
   const data = [
-    { id: 1, video: 'video1', participate: '0', cheering: '0', comment: '0', Date: '2020.02.21' },
+    { id: 1, video: 'video1', participate: '0', cheering: '0', comment: '0', Date: '2020.02.21'},
     { id: 2, video: 'video2', participate: '80k', cheering: '80k', comment: '1000k', Date: '2020.02.21' },
     { id: 3, video: 'video3', participate: '0', cheering: '0', comment: '0', Date: '2020.02.21' },
     { id: 4, video: 'video4', participate: '0', cheering: '80k', comment: '1000k', Date: '2020.02.21' },
@@ -74,7 +74,7 @@ const TableComponent = () => {
             <th>댓글</th>
             <th>날짜 ↓</th>
           </tr>
-        </thead>
+          </thead>
           <div  className="custom-line"></div>
         <tbody>
           {data.map((item) => (
@@ -218,7 +218,6 @@ const TableComponent = () => {
           ))}
         </tbody>
       </table>
-      {selectedRows.length > 0 && <p>{selectedRows.length} selected</p>}
     </div>
   );
 };
